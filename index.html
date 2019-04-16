@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>G:cardGeneratr </title>
+  <link rel='stylesheet' href='css/bootstrap.min.css'>
+  <link rel="stylesheet" href="css/bootstrap-datepicker.min.css" />
+  <link rel="stylesheet" href="css/regular.min.css" />
+  <link rel="stylesheet" href="css/fontawesome.min.css" />
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col col-3">
+        <div class="form-group">
+          <div class="btn-group btn-group-sm info-status" role="group" aria-label="Status" id="info-status-options">
+            <a href="#" class="btn btn-warning" data-value="0">Furto</a>
+            <a href="#" class="btn btn-danger" data-value="1">Roubo</a>
+            <a href="#" class="btn btn-success" data-value="2">Recuperada</a>
+          </div>
+          <hr>
+          <span><input type="file" name="" id="span"></span>
+          <hr>
+          <div class="input-group date">
+                  <!--<i class="fas fa-stroopwafel">SS</i><span class="fas fa-stroopwafel"></span>SSS-->
+              <input type="text" class="form-control" id="input-date" name="input-date" value="">
+              <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-th"></span>
+              </div>
+          </div>
+          <input class="form-control" id="input-a" name="input-a" placeholder="Info 1">
+          <textarea class="form-control" id="input-b" name="input-b" placeholder="descrição..."></textarea>
+         <!--  <input class="form-control" id="input-c" name="input-c" placeholder="info complementar"> -->
+          <a href="#" id="generate" class="btn btn-success">Atualizar imagem</a>
+          <!-- <a href="#" id="generate2" class="btn btn-warning">Recuperada!</a> -->
+        </div>
+        <hr>
+        BO?
+      </div>
+      <div class="col col-9">
+        <canvas id="canvas"></canvas>
+
+        <hr>
+        <div class="btn-group btn-group-sm cards-list" role="group" id="cards-list">
+          <a href="#" class="btn btn-secondary" data-infoText="Marca!" data-infoText2="info \nnova" data-infoDate="12/12/2017" data-infoStatus="0" data-infoPhoto="bike04.png">A1</a>
+          <a href="#" class="btn btn-info" data-infoText="Mountain Bike Trek 4400" data-infoText2="quadro 18 aro 26 \nBagageiro dianteiro e Traseiro \n2131231" data-infoDate="01/04/2018" data-infoStatus="1" data-infoPhoto="bike05.png">B2</a>
+          <a href="#" class="btn btn-success" data-infoText="GT Karakoram" data-infoText2="Comp 29" data-infoDate="30/09/2018" data-infoStatus="2" data-infoPhoto="bike06.jpg">C3</a>
+          <a href="#" class="btn btn-warning" data-infoText="Caloi 10 branca" data-infoText2="info complementar" data-infoDate="14/08/2018" data-infoStatus="0" data-infoPhoto="bike07.jpg">D4</a>
+        </div>
+        <div class="image-result-container">
+          <a href="#" id="image-result-link" target="_blank">DOWNLOAD DA IMAGEM GERADA</a><br>
+          <img src="" alt="Image is not generated..." id="image-result" class="image-result">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="load-box">
+  <select></select>
+    <img src="i/base01.png" id="base01">
+    <!-- <img src="i/base01b.png" id="base01b"> -->
+    <img src="i/base02.png" id="base02">
+    <img src="i/base02b.png" id="base02b">
+    <img src="i/base02c.png" id="base02c">
+    <img src="i/base02d.png" id="base02d">
+    <img src="i/base03.png" id="base03">
+    <img src="i/bike02.png" id="bike">
+    <!-- <img src="i/bike01.png" id="bike2"> -->
+</div>
+
+<script src='js/jquery.min.js'></script>
+<script src='js/fabric.min.js'></script>
+<script src='js/webfontloader.js'></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+
+<script  src="js/index.js"></script>
+
+</body>
+</html>
