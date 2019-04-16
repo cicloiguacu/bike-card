@@ -1,0 +1,60 @@
+const canvas = new fabric.Canvas('canvas');
+const fonts = ['Roboto','Roboto Condensed','Allura', 'Dancing Script', 'Reenie Beanie', 'Parisienne', 'Lovers Quarrel'];
+let selectedFont = fonts[0];
+let text = 'Info A1';
+let text2 = 'info complementar';
+
+WebFont.load({
+  classes: false,
+  google: {
+    families: fonts
+  },
+  active() {
+	  $('select').append(fonts.map(font => '<option style="font-family: ' + font + '">' + font + '</option'));
+
+	  generateImage();
+  }
+});
+
+$('#input-a').on('change paste keyup', function () {
+	text = $(this).val();
+	generateImage();
+});
+$('#input-b').on('change paste keyup', function () {
+	text2 = $(this).val();
+	generateImage();
+});
+
+$('select').on('change', function () {
+	selectedFont = this.value;
+  generateImage();
+});
+
+function generateImage(text) {
+	$('img').attr('src', getPNGDataURLFromString());
+}
+
+function getPNGDataURLFromString() {
+  canvas.clear();
+
+  const textObject = new fabric.Text(text, {
+    fontSize: 28,
+    fontFamily: selectedFont
+  });
+  
+  const textObject2 = new fabric.Text(text2, {
+    fontSize: 14,
+    fontFamily: selectedFont,
+    y: 50
+  });
+
+  canvas.add(textObject);
+  canvas.add(textObject2);
+
+  const dataURL = canvas.toDataURL({
+    width: textObject.getLineWidth(0) + 20,
+    height: textObject.getHeightOfLine(0) + 30
+  });
+
+  return dataURL;
+}
